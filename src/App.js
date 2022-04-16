@@ -1,11 +1,20 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+// styles
 import './App.css';
+import { Home } from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-6xl font-bold underline bg-gray-500">
-        Hello world!
-      </h1>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      
+      </BrowserRouter>
     </div>
   );
 }
