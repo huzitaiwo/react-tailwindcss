@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 // styles
 import './App.css';
-import { Home } from './pages/Home';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/signup'>
+            <Signup />
           </Route>
         </Switch>
       
