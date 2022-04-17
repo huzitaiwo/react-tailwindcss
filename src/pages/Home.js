@@ -6,7 +6,25 @@ export default function Home() {
       <div>
         <Link to='/login'>Login</Link>
         <Link to='/login'>Signup</Link>
-      </div> 
+      </div>
+      <header>
+        <h2>Recipes</h2>
+        <h3>For Ninjas</h3>
+      </header>
+      <div>
+        <h4>Latest Recipes</h4>
+
+        <div>
+          {/* card goes here */}
+          <div>
+            <img src="" alt="" />
+            <div>
+              <span>5 Bean Chili Stew</span>
+              <span>Recipe by Mario</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
