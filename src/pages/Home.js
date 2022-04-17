@@ -8,7 +8,7 @@ import stew from '../assets/stew.jpg'
 export default function Home() {
   return (
     <>
-      <div className="flex justify-end">
+      <div className="flex justify-center md:justify-end">
         {/*  */}
         <Link className="border text-gray-600 rounded-md px-4 py-2" to='/login'>Login</Link>
         <Link className="border text-gray-600 rounded-md px-4 py-2 ml-2" to='/signup'>Signup</Link>
