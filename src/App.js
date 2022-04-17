@@ -11,7 +11,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="App text-gray-600">
+    <div className="App font-poppins text-gray-600">
       <BrowserRouter>
         <Navbar />
         <main className='px-14 py-5'>

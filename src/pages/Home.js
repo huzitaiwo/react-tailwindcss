@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom"
 
 //images
-import curry from '../assets/curry.jpg'
-import noodles from '../assets/noodles.jpg'
+// import curry from '../assets/curry.jpg'
+// import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
 
 export default function Home() {
   return (
     <>
       <div>
-        <Link to='/login'>Login</Link>
-        <Link to='/login'>Signup</Link>
+        {/* bg-gray-500 text-white rounded px-4 py-2 */}
+        <Link className="" to='/login'>Login</Link>
+        <Link to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
