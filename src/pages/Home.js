@@ -24,6 +24,16 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <h4>Most Popular</h4>
+
+        <div>
+          {/* card goes here */}
+        </div>
+
+        <div>
+          <button>Load more</button>
+        </div>
       </div>
     </>
   )
