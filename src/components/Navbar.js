@@ -5,7 +5,7 @@ export default function Navbar() {
     <div>
       <nav>
         <div>
-          <h1 className='font-bold uppercase'>
+          <h1 className='font-bold uppercase border-b border-gray-100'>
             <Link to='/'>Food Ninja</Link>
           </h1>
         </div>
