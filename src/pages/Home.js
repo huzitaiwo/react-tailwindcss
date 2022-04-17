@@ -23,9 +23,9 @@ export default function Home() {
         <div className="mt-6">
           {/* card goes here */}
           <div className="bg-white rounded overflow-hidden shadow-md">
-            <img src={stew} alt="" />
-            <div>
-              <span>5 Bean Chili Stew</span>
+            <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
+            <div className="m-4">
+              <span className="font-bold block">5 Bean Chili Stew</span>
               <span>Recipe by Mario</span>
             </div>
           </div>
