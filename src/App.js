@@ -15,7 +15,6 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <main>
-          <div></div>
           <Switch>
             <Route exact path='/'>
               <Home />
