@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
 //images
-// import curry from '../assets/curry.jpg'
-// import noodles from '../assets/noodles.jpg'
+import curry from '../assets/curry.jpg'
+import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
 
 export default function Home() {
@@ -27,6 +27,30 @@ export default function Home() {
             <div className="m-4">
               <span className="font-bold block">5 Bean Chili Stew</span>
               <span>Recipe by Mario</span>
+            </div>
+            <div className="badge">25mins</div>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          {/* card goes here */}
+          <div className="card">
+            <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
+            <div className="m-4">
+              <span className="font-bold block">Ved Noodles</span>
+              <span>Recipe by Luigi</span>
+            </div>
+            <div className="badge">25mins</div>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          {/* card goes here */}
+          <div className="card">
+            <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
+            <div className="m-4">
+              <span className="font-bold block">Tofu curry</span>
+              <span>Recipe by Blue</span>
             </div>
             <div className="badge">25mins</div>
           </div>
