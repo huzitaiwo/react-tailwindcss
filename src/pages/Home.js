@@ -22,7 +22,7 @@ export default function Home() {
 
         <div className="mt-6">
           {/* card goes here */}
-          <div>
+          <div className="bg-white rounded overflow-hidden shadow-md">
             <img src={stew} alt="" />
             <div>
               <span>5 Bean Chili Stew</span>

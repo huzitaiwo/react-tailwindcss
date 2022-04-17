@@ -14,7 +14,7 @@ function App() {
     <div className="App font-poppins text-gray-600">
       <BrowserRouter>
         <Navbar />
-        <main className='px-14 py-5'>
+        <main className='px-14 py-5 bg-gray-100'>
           <Switch>
             <Route exact path='/'>
               <Home />
