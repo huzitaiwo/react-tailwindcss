@@ -8,10 +8,10 @@ import stew from '../assets/stew.jpg'
 export default function Home() {
   return (
     <>
-      <div>
-        {/* bg-gray-500 text-white rounded px-4 py-2 */}
-        <Link className="" to='/login'>Login</Link>
-        <Link to='/signup'>Signup</Link>
+      <div className="flex justify-end">
+        {/*  */}
+        <Link className="border border-gray-600 text-gray-600 rounded-md px-4 py-2" to='/login'>Login</Link>
+        <Link className="border border-gray-600 text-gray-600 rounded-md px-4 py-2 ml-2" to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
@@ -37,8 +37,8 @@ export default function Home() {
           {/* card goes here */}
         </div>
 
-        <div>
-          <button>Load more</button>
+        <div className="flex justify-center">
+          <button className="bg-gray-600 text-white">Load more</button>
         </div>
       </div>
     </>
