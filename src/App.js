@@ -10,18 +10,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/signup'>
-            <Signup />
-          </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-        </Switch>
-      
+        <main>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/signup'>
+              <Signup />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+          </Switch>
+        </main>
       </BrowserRouter>
     </div>
   );
