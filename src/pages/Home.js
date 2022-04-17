@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <div className="flex justify-end">
         {/*  */}
-        <Link className="border border-gray-600 text-gray-600 rounded-md px-4 py-2" to='/login'>Login</Link>
-        <Link className="border border-gray-600 text-gray-600 rounded-md px-4 py-2 ml-2" to='/signup'>Signup</Link>
+        <Link className="border text-gray-600 rounded-md px-4 py-2" to='/login'>Login</Link>
+        <Link className="border text-gray-600 rounded-md px-4 py-2 ml-2" to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
