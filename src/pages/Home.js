@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 
 //images
 import curry from '../assets/curry.jpg'
