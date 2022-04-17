@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom"
 
+//images
+import curry from '../assets/curry.jpg'
+import noodles from '../assets/noodles.jpg'
+import stew from '../assets/stew.jpg'
+
 export default function Home() {
   return (
     <>
@@ -17,7 +22,7 @@ export default function Home() {
         <div>
           {/* card goes here */}
           <div>
-            <img src="" alt="" />
+            <img src={stew} alt="" />
             <div>
               <span>5 Bean Chili Stew</span>
               <span>Recipe by Mario</span>
