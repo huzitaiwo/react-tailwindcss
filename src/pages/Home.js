@@ -17,9 +17,9 @@ export default function Home() {
         <h3 className="text-2xl font-semibold">For Ninjas</h3>
       </header>
       <div>
-        <h4 className="font-bold">Latest Recipes</h4>
+        <h4 className="font-bold mt-10 pb-2">Latest Recipes</h4>
 
-        <div>
+        <div className="mt-6">
           {/* card goes here */}
           <div>
             <img src={stew} alt="" />
@@ -30,9 +30,9 @@ export default function Home() {
           </div>
         </div>
 
-        <h4 className="font-bold">Most Popular</h4>
+        <h4 className="font-bold mt-10 pb-2">Most Popular</h4>
 
-        <div>
+        <div className="mt-6">
           {/* card goes here */}
         </div>
 

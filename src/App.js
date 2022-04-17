@@ -14,7 +14,7 @@ function App() {
     <div className="App text-gray-600">
       <BrowserRouter>
         <Navbar />
-        <main>
+        <main className='px-14 py-5'>
           <Switch>
             <Route exact path='/'>
               <Home />
