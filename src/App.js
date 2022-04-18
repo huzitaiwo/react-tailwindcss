@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 // styles and components
 import './App.css';
@@ -15,23 +15,13 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <main className='px-14 py-5 bg-gray-100'>
-          <Switch>
-            <Route path='/contact'>
-              <Contact />
-            </Route>
-            <Route path='/about'>
-              <About />
-            </Route>
-            <Route path='/signup'>
-              <Signup />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>
