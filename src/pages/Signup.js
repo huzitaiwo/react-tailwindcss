@@ -30,8 +30,13 @@ export default function Signup() {
     setThumbnail(file)
   }
 
+  const handleSignup = e => {
+    e.preventDefault()
+    console.log(email, password, displayName)
+  }
+
   return (
-    <form className='auth-form'>
+    <form className='auth-form' onSubmit={handleSignup}>
       <h2>Sign up</h2>
 
       <label>
@@ -63,6 +68,7 @@ export default function Signup() {
         <input 
           type="file"
           onChange={handleFileChange}
+          value={thumbnail}
         />
         {thumbnailError && <div className='error'>{thumbnailError}</div>}
       </label>
