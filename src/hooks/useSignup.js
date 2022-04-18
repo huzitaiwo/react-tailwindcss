@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { firebaseAuth, firebaseStorage } from '../firebase/config'
-import { useAuthContext } from './useAuthcontext'
+import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
   const { dispatch } = useAuthContext()

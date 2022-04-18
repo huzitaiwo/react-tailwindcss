@@ -16,9 +16,6 @@ function App() {
         <Navbar />
         <main className='px-14 py-5 bg-gray-100'>
           <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
             <Route path='/contact'>
               <Contact />
             </Route>
@@ -30,6 +27,9 @@ function App() {
             </Route>
             <Route path='/login'>
               <Login />
+            </Route>
+            <Route exact path='/'>
+              <Home />
             </Route>
           </Switch>
         </main>
