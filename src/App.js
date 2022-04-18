@@ -16,21 +16,11 @@ function App() {
         <Navbar />
         <main className='px-14 py-5 bg-gray-100'>
           <Routes>
-            <Route path='/contact'>
-              <Contact />
-            </Route>
-            <Route path='/about'>
-              <About />
-            </Route>
-            <Route path='/signup'>
-              <Signup />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route exact path='/'>
-              <Home />
-            </Route>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </main>
       </BrowserRouter>
