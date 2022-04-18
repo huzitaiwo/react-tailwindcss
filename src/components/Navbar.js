@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <div>
+    <div className='md:col-span-1'>
       <nav>
         <div>
           <h1 className='font-bold uppercase border-b border-gray-100'>

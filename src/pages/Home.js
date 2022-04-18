@@ -20,7 +20,7 @@ export default function Home() {
       <div>
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Recipes</h4>
 
-        <div className="mt-6">
+        <div className="mt-6 grid lg:grid-cols-3 gap-10">
           {/* card goes here */}
           <div className="card">
             <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />

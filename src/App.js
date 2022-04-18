@@ -12,18 +12,20 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <div className="App font-poppins text-gray-600">
-      <BrowserRouter>
-        <Navbar />
-        <main className='px-14 py-5 bg-gray-100'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/login' element={<Login />} />
-          </Routes>
-        </main>
-      </BrowserRouter>
+      <div className='grid md:grid-cols-3'>
+        <BrowserRouter>
+          <Navbar />
+          <main className='px-14 py-5 bg-gray-100 md:col-span-2'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/login' element={<Login />} />
+            </Routes>
+          </main>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
