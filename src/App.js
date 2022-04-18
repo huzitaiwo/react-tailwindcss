@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 // styles and components
 import './App.css';
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <main className='px-14 py-5 bg-gray-100'>
-          <Switch>
+          <Routes>
             <Route path='/contact'>
               <Contact />
             </Route>
@@ -31,7 +31,7 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-          </Switch>
+          </Routes>
         </main>
       </BrowserRouter>
     </div>
