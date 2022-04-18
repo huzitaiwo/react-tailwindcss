@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useSignup} from '../hooks/useSignup'
 
 export default function Signup() {
+  const { signup, error, isPending } = useSignup()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [displayName, setDisplayName] = useState('')
@@ -32,7 +35,7 @@ export default function Signup() {
 
   const handleSignup = e => {
     e.preventDefault()
-    console.log(email, password, displayName)
+    signup(email, password, displayName)
   }
 
   return (
@@ -68,7 +71,6 @@ export default function Signup() {
         <input 
           type="file"
           onChange={handleFileChange}
-          value={thumbnail}
         />
         {thumbnailError && <div className='error'>{thumbnailError}</div>}
       </label>
