@@ -8,10 +8,10 @@ import stew from '../assets/stew.jpg'
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center md:justify-end">
+      <div className="flex justify-center md:justify-end mb-5">
         {/*  */}
-        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white md:border" to='/login'>Login</Link>
-        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border" to='/signup'>Signup</Link>
+        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white md:border transition ease-in-out duration-500" to='/login'>Login</Link>
+        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border transition ease-in-out duration-500" to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-          <button className="btn bg-gray-600 hover:bg-gray-800 text-white">Load more</button>
+          <button className="btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">Load more</button>
         </div>
       </div>
     </>
