@@ -6,7 +6,7 @@ export default function Navbar() {
       <nav>
         <div>
           <h1 className='font-bold uppercase border-b border-gray-100'>
-            <Link to='/'>SweetMealssssss</Link>
+            <Link to='/'>SweetMealsss</Link>
           </h1>
         </div>
         <ul>
