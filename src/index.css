@@ -31,3 +31,7 @@ code {
 .badge {
   @apply bg-gray-400 text-white text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2
 }
+
+.btn {
+  @apply text-gray-600 text-xs rounded-md px-4 py-2 font-bold cursor-pointer tracking-wider;
+}
