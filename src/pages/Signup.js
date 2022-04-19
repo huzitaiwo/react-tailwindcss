@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Header from '../components/Header'
 import { useSignup} from '../hooks/useSignup'
 
 export default function Signup() {
@@ -40,6 +41,7 @@ export default function Signup() {
 
   return (
     <div>
+      <Header />
       <form className='auth-form' onSubmit={handleSignup}>
         <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
 
