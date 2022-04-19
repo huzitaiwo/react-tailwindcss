@@ -5,8 +5,8 @@ export default function Navbar() {
     <div className='md:col-span-1'>
       <nav>
         <div>
-          <h1 className='font-bold uppercase border-b border-gray-100'>
-            <Link to='/'>SweetMealsss</Link>
+          <h1 className='text-3xl font-bold border-b border-gray-100'>
+            <Link className='hover:text-gray-800' to='/'>SweetMealsss</Link>
           </h1>
         </div>
         <ul>

@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <div className="flex justify-center md:justify-end">
         {/*  */}
-        <Link className="btn text-gray-600 md:border" to='/login'>Login</Link>
-        <Link className="btn text-gray-600 ml-2 md:border" to='/signup'>Signup</Link>
+        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white md:border" to='/login'>Login</Link>
+        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border" to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
@@ -24,7 +24,7 @@ export default function Home() {
 
            <div className="mt-6">
             {/* card goes here */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
               <div className="m-4">
                 <span className="font-bold block">5 Bean Chili Stew</span>
@@ -41,7 +41,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Ved Noodles</span>
@@ -58,7 +58,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Tofu curry</span>
@@ -75,7 +75,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Tofu curry</span>
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-          <button className="btn bg-gray-500 text-white">Load more</button>
+          <button className="btn bg-gray-600 hover:bg-gray-800 text-white">Load more</button>
         </div>
       </div>
     </>
