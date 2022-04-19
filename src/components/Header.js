@@ -1,6 +1,9 @@
-import React from 'react'
+import { Link } from 'react'
+import { useLogout } from '../hooks/useLogout'
 
 export default function Header() {
+  const { logout, isPending, error } = useLogout()
+
   return (
     <header className="flex justify-center md:justify-end mb-5">
       <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white md:border transition ease-in-out duration-500" to='/login'>Login</Link>

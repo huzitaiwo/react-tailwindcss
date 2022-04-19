@@ -8,6 +8,7 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
+import Header from './components/Header'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className='grid md:grid-cols-3'>
         <BrowserRouter>
           <Navbar />
+          <Header />
           <main className='px-14 py-5 bg-gray-100 md:col-span-2'>
             <Routes>
               <Route path='/' element={<Home />} />

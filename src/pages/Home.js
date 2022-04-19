@@ -1,14 +1,10 @@
-import { Link } from "react-router-dom"
-import { useLogout } from '../hooks/useLogout'
-
 //images
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
 
 export default function Home() {
-  const { logout, isPending, error } = useLogout()
-
+  
   return (
     <>
       <div>
