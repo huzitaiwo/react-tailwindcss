@@ -20,7 +20,7 @@ function App() {
         <div className='grid md:grid-cols-3'>
           <BrowserRouter>
             <Navbar />
-            <main className='px-6 md:px-14 py-6 bg-gray-100 md:col-span-2 min-h-screen'>
+            <main className='px-6 md:px-14 py-6 bg-gray-100 md:col-span-2'>
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
