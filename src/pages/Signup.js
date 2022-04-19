@@ -39,42 +39,44 @@ export default function Signup() {
   }
 
   return (
-    <form className='auth-form' onSubmit={handleSignup}>
-      <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
+    <div>
+      <form className='auth-form' onSubmit={handleSignup}>
+        <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
 
-      <label>
-        <span>email:</span>
-        <input 
-          type="email"
-          onChange={e => setEmail(e.target.value)}
-          value={email}
-        />
-      </label>
-      <label>
-        <span>password:</span>
-        <input 
-          type="password"
-          onChange={e => setPassword(e.target.value)}
-          value={password}
-        />
-      </label>
-      <label>
-        <span>display name:</span>
-        <input 
-          type="text"
-          onChange={e => setDisplayName(e.target.value)}
-          value={displayName}
-        />
-      </label>
-      <label>
-        <span>profile thumbnail:</span>
-        <input 
-          type="file"
-          onChange={handleFileChange}
-        />
-        {thumbnailError && <div className='error'>{thumbnailError}</div>}
-      </label>
-      <button className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border transition ease-in-out duration-500">signup</button>
-    </form>
+        <label>
+          <span>email:</span>
+          <input 
+            type="email"
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </label>
+        <label>
+          <span>password:</span>
+          <input 
+            type="password"
+            onChange={e => setPassword(e.target.value)}
+            value={password}
+          />
+        </label>
+        <label>
+          <span>display name:</span>
+          <input 
+            type="text"
+            onChange={e => setDisplayName(e.target.value)}
+            value={displayName}
+          />
+        </label>
+        <label>
+          <span>profile thumbnail:</span>
+          <input 
+            type="file"
+            onChange={handleFileChange}
+          />
+          {thumbnailError && <div className='error'>{thumbnailError}</div>}
+        </label>
+        <button className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border transition ease-in-out duration-500">signup</button>
+      </form>
+    </div>
   )
 }

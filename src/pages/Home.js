@@ -2,11 +2,13 @@
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
+import Header from '../components/Header'
 
 export default function Home() {
-  
+
   return (
     <>
+      <Header />
       <div>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
         <h3 className="text-2xl font-semibold">For Ninjas</h3>
