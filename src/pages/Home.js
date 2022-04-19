@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <div className="flex justify-center md:justify-end">
         {/*  */}
-        <Link className="btn md:border" to='/login'>Login</Link>
-        <Link className="btn ml-2 md:border" to='/signup'>Signup</Link>
+        <Link className="btn text-gray-600 md:border" to='/login'>Login</Link>
+        <Link className="btn text-gray-600 ml-2 md:border" to='/signup'>Signup</Link>
       </div>
       <header>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
@@ -20,7 +20,7 @@ export default function Home() {
       <div>
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Recipes</h4>
 
-        <div className="mt-6 grid lg:grid-cols-2 gap-10">
+        <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
            <div className="mt-6">
             {/* card goes here */}
