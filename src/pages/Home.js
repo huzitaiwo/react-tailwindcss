@@ -20,53 +20,73 @@ export default function Home() {
       <div>
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Recipes</h4>
 
-        <div className="mt-6 grid lg:grid-cols-3 gap-10">
-          {/* card goes here */}
-          <div className="card">
-            <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
-            <div className="m-4">
-              <span className="font-bold block">5 Bean Chili Stew</span>
-              <span>Recipe by Mario</span>
-            </div>
-            <div className="badge">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>25mins</span>
+        <div className="mt-6 grid lg:grid-cols-2 gap-10">
+
+           <div className="mt-6">
+            {/* card goes here */}
+            <div className="card">
+              <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
+              <div className="m-4">
+                <span className="font-bold block">5 Bean Chili Stew</span>
+                <span>Recipe by Mario</span>
+              </div>
+              <div className="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>25mins</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-6">
-          {/* card goes here */}
-          <div className="card">
-            <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
-            <div className="m-4">
-              <span className="font-bold block">Ved Noodles</span>
-              <span>Recipe by Luigi</span>
-            </div>
-            <div className="badge">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>25mins</span>
+          <div className="mt-6">
+            {/* card goes here */}
+            <div className="card">
+              <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
+              <div className="m-4">
+                <span className="font-bold block">Ved Noodles</span>
+                <span>Recipe by Luigi</span>
+              </div>
+              <div className="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>25mins</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-6">
-          {/* card goes here */}
-          <div className="card">
-            <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
-            <div className="m-4">
-              <span className="font-bold block">Tofu curry</span>
-              <span>Recipe by Blue</span>
+          <div className="mt-6">
+            {/* card goes here */}
+            <div className="card">
+              <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
+              <div className="m-4">
+                <span className="font-bold block">Tofu curry</span>
+                <span>Recipe by Blue</span>
+              </div>
+              <div className="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>25mins</span>
+              </div>
             </div>
-            <div className="badge">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>25mins</span>
+          </div>
+
+          <div className="mt-6">
+            {/* card goes here */}
+            <div className="card">
+              <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
+              <div className="m-4">
+                <span className="font-bold block">Tofu curry</span>
+                <span>Recipe by Blue</span>
+              </div>
+              <div className="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>25mins</span>
+              </div>
             </div>
           </div>
         </div>
