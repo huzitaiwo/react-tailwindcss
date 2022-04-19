@@ -28,7 +28,12 @@ export default function Home() {
               <span className="font-bold block">5 Bean Chili Stew</span>
               <span>Recipe by Mario</span>
             </div>
-            <div className="badge">25mins</div>
+            <div className="badge">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>25mins</span>
+            </div>
           </div>
         </div>
 
@@ -57,7 +62,12 @@ export default function Home() {
               <span className="font-bold block">Tofu curry</span>
               <span>Recipe by Blue</span>
             </div>
-            <div className="badge">25mins</div>
+            <div className="badge">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>25mins</span>
+            </div>
           </div>
         </div>
 
