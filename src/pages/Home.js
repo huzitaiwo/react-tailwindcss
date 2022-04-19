@@ -1,4 +1,5 @@
-import { Link, withRouter } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { useLogout } from '../hooks/useLogout'
 
 //images
 import curry from '../assets/curry.jpg'
@@ -6,17 +7,14 @@ import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
 
 export default function Home() {
+  const { logout, isPending, error } = useLogout()
+
   return (
     <>
-      <div className="flex justify-center md:justify-end mb-5">
-        {/*  */}
-        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white md:border transition ease-in-out duration-500" to='/login'>Login</Link>
-        <Link className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border transition ease-in-out duration-500" to='/signup'>Signup</Link>
-      </div>
-      <header>
+      <div>
         <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
         <h3 className="text-2xl font-semibold">For Ninjas</h3>
-      </header>
+      </div>
       <div>
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Recipes</h4>
 

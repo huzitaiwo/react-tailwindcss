@@ -40,7 +40,7 @@ export default function Signup() {
 
   return (
     <form className='auth-form' onSubmit={handleSignup}>
-      <h2>Sign up</h2>
+      <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
 
       <label>
         <span>email:</span>
@@ -74,7 +74,7 @@ export default function Signup() {
         />
         {thumbnailError && <div className='error'>{thumbnailError}</div>}
       </label>
-      <button className="btn">signup</button>
+      <button className="btn text-gray-600 hover:bg-gray-600 hover:text-white ml-2 md:border transition ease-in-out duration-500">signup</button>
     </form>
   )
 }
