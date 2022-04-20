@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { firebaseAuth, firebaseStorage } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
@@ -7,6 +7,7 @@ export const useSignup = () => {
 
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
+  const [unMounted, setUnMounted] = useState(false)
 
   const signup = async (email, password, displayName) => {
     setError(null)
@@ -26,15 +27,24 @@ export const useSignup = () => {
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
 
-      setIsPending(false)
-      setError(null)
+      //update status
+
+      if (!unMounted) {
+        setIsPending(false)
+        setError(null)
+      }
     }
     catch (err) {
-      console.log(err.message)
-      setError(err.message)
-      setIsPending(false)
+      if (!unMounted) {
+        setError(err.message)
+        setIsPending(false)
+      }
     }
   }
+
+  useEffect(() => {
+    return () => setUnMounted(true)
+  }, [])
 
   return { error, isPending, signup }
 }
