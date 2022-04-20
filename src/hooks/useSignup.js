@@ -36,8 +36,8 @@ export const useSignup = () => {
     }
     catch (err) {
       if (!unMounted) {
-        setError(err.message)
         setIsPending(false)
+        setError(err.message)
       }
     }
   }

@@ -81,7 +81,9 @@ export default function Signup() {
             />
             {thumbnailError && <div className='error'>{thumbnailError}</div>}
           </label>
-          <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>
+          {error && <div>{error}</div>}
+          {isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signing up...</button>}
+          {!isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>}
         </form>
       </div>
     </div>
