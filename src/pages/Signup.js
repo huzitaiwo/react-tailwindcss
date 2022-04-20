@@ -44,43 +44,46 @@ export default function Signup() {
   return (
     <div>
       <Header />
-      <form className='auth-form' onSubmit={handleSignup}>
-        <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
+      <div className='flex justify-center'>
 
-        <label className='block mb-5'>
-          <span className='block mb-2'>email:</span>
-          <input className='px-2 py-1' 
-            type="email"
-            onChange={e => setEmail(e.target.value)}
-            value={email}
-          />
-        </label>
-        <label className='block mb-5'>
-          <span className='block mb-2'>password:</span>
-          <input className='px-2 py-1' 
-            type="password"
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-          />
-        </label>
-        <label className='block mb-5'>
-          <span className='block mb-2'>display name:</span>
-          <input className='px-2 py-1' 
-            type="text"
-            onChange={e => setDisplayName(e.target.value)}
-            value={displayName}
-          />
-        </label>
-        <label className='block mb-5'>
-          <span className='block mb-2'>profile thumbnail:</span>
-          <input className='px-2 py-1' 
-            type="file"
-            onChange={handleFileChange}
-          />
-          {thumbnailError && <div className='error'>{thumbnailError}</div>}
-        </label>
-        <button className="btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>
-      </form>
+        <form onSubmit={handleSignup}>
+          <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
+
+          <label className='block mb-5 w-500'>
+            <span className='block mb-2'>email:</span>
+            <input className='block px-2 py-1 w-500' 
+              type="email"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
+            />
+          </label>
+          <label className='block mb-5'>
+            <span className='block mb-2'>password:</span>
+            <input className='px-2 py-1' 
+              type="password"
+              onChange={e => setPassword(e.target.value)}
+              value={password}
+            />
+          </label>
+          <label className='block mb-5'>
+            <span className='block mb-2'>display name:</span>
+            <input className='px-2 py-1' 
+              type="text"
+              onChange={e => setDisplayName(e.target.value)}
+              value={displayName}
+            />
+          </label>
+          <label className='block mb-5'>
+            <span className='block mb-2'>profile thumbnail:</span>
+            <input className='px-2 py-1' 
+              type="file"
+              onChange={handleFileChange}
+            />
+            {thumbnailError && <div className='error'>{thumbnailError}</div>}
+          </label>
+          <button className="btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>
+        </form>
+      </div>
     </div>
   )
 }
