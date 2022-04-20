@@ -30,23 +30,9 @@ export default function Login() {
               value={password}
             />
           </label>
-          <label className='block mb-5'>
-            <span className='block mb-2'>display name:</span>
-            <input className='px-2 py-1' 
-              type="text"
-              onChange={e => setDisplayName(e.target.value)}
-              value={displayName}
-            />
-          </label>
-          <label className='block mb-5'>
-            <span className='block mb-2'>profile thumbnail:</span>
-            <input className='px-2 py-1' 
-              type="file"
-              onChange={handleFileChange}
-            />
-            {thumbnailError && <div className='error'>{thumbnailError}</div>}
-          </label>
-          <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>
+          {error && <div>{error}</div>}
+          {!isPending && <button onClick={login} className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">login</button>}
+          {isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">loging in...</button>}
         </form>
       </div>
     </div>
