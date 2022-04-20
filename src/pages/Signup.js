@@ -57,6 +57,7 @@ export default function Signup() {
               value={email}
             />
           </label>
+
           <label className='block mb-5'>
             <span className='block mb-2'>password:</span>
             <input className='px-2 py-1' 
@@ -65,6 +66,7 @@ export default function Signup() {
               value={password}
             />
           </label>
+
           <label className='block mb-5'>
             <span className='block mb-2'>display name:</span>
             <input className='px-2 py-1' 
@@ -73,6 +75,7 @@ export default function Signup() {
               value={displayName}
             />
           </label>
+
           <label className='block mb-5'>
             <span className='block mb-2'>profile thumbnail:</span>
             <input className='px-2 py-1' 
@@ -81,6 +84,7 @@ export default function Signup() {
             />
             {thumbnailError && <div className='error'>{thumbnailError}</div>}
           </label>
+          
           {error && <div>{error}</div>}
           {isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signing up...</button>}
           {!isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">signup</button>}

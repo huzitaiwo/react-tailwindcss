@@ -22,7 +22,8 @@ input {
   outline-color: #e5e7eb;
   outline-width: 1px;
   width: 100%;
-  max-width: 300px
+  max-width: 300px;
+  font-size: 0.8rem !important;
 }
 
 
