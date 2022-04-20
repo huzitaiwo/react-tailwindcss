@@ -18,7 +18,7 @@ export const useLogin = (email, password) => {
       const res = await firebaseAuth.signInWithEmailAndPassword(email, password)
 
       //dispatch login action
-      dispatch({ type: 'LOGIN' })
+      dispatch({ type: 'LOGIN', payload: res.user })
 
       // update states
       if (!unMounted) {
