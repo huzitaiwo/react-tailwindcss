@@ -18,9 +18,12 @@ export default function Header() {
       )}
 
       {user && (
-        <button onClick={logout} className="btn text-gray-600 hover:bg-gray-600 hover:text-white mx-2 md:border transition ease-in-out duration-500">
-          Logout
-        </button>
+        <>
+          <p>&#128075; Welcome! {user.displayName}</p>
+          <button onClick={logout} className="btn text-gray-600 hover:bg-gray-600 hover:text-white mx-2 md:border transition ease-in-out duration-500">
+            Logout
+          </button>
+        </>
       )}
     </header>
   )
