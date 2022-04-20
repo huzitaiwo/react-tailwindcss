@@ -19,6 +19,7 @@ export default function Login() {
     <div>
       <Header />
       <div className='flex justify-center'>
+
         <form onSubmit={handleLogin}>
           <h2 className='text-2xl font-bold mb-4'>Login</h2>
 
@@ -30,6 +31,7 @@ export default function Login() {
               value={email}
             />
           </label>
+
           <label className='block mb-5'>
             <span className='block mb-2'>password:</span>
             <input className='px-2 py-1' 
@@ -38,6 +40,7 @@ export default function Login() {
               value={password}
             />
           </label>
+          
           {error && <div>{error}</div>}
           {!isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">login</button>}
           {isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">loging in...</button>}
