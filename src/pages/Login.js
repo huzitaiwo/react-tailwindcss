@@ -16,9 +16,9 @@ export default function Login() {
   }
 
   return (
-    <div className="h-screen">
+    <div>
       <Header />
-      <div className='flex justify-center items-center h-full'>
+      <div className='flex justify-center'>
 
         <form onSubmit={handleLogin}>
           <h2 className='text-2xl font-bold mb-4'>Login</h2>
