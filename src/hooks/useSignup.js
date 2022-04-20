@@ -17,6 +17,8 @@ export const useSignup = () => {
       // sign user up
       const res = await firebaseAuth.createUserWithEmailAndPassword(email, password)
 
+      console.log(res)
+
       if (!res) {
         throw new Error('Colud not complete signup')
       }
@@ -27,17 +29,18 @@ export const useSignup = () => {
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
 
-      //update status
-
+      //update states
       if (!unMounted) {
         setIsPending(false)
         setError(null)
       }
     }
+
     catch (err) {
       if (!unMounted) {
-        setIsPending(false)
+        console.log(err.message)
         setError(err.message)
+        setIsPending(false)
       }
     }
   }
