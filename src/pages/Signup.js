@@ -49,9 +49,9 @@ export default function Signup() {
         <form onSubmit={handleSignup}>
           <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
 
-          <label className='block mb-5 w-500'>
+          <label className='block mb-5 w-full'>
             <span className='block mb-2'>email:</span>
-            <input className='block px-2 py-1 w-500' 
+            <input className='block px-2 py-1' 
               type="email"
               onChange={e => setEmail(e.target.value)}
               value={email}
