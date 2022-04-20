@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
-import { useAuthcontext } from '../hooks/useAuthContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
 export default function Header() {
   const { logout } = useLogout()
-  const { user } = useAuthcontext()
+  const { user } = useAuthContext()
 
   return (
     <header className="flex justify-center md:justify-end mb-5">
