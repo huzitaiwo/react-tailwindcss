@@ -42,9 +42,9 @@ export default function Signup() {
   }
 
   return (
-    <div>
+    <div className="h-screen">
       <Header />
-      <div className='flex justify-center'>
+      <div className='flex justify-center items-center h-full'>
 
         <form onSubmit={handleSignup}>
           <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
