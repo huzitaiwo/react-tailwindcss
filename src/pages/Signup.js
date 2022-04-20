@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import Header from '../components/Header'
 import { useSignup} from '../hooks/useSignup'
+
+//components
+import Header from '../components/Header'
 
 export default function Signup() {
   const { signup, error, isPending } = useSignup()
