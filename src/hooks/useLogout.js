@@ -30,7 +30,8 @@ export const useLogout = () => {
     catch(err) {
       if (!unMounted) {
         setIsPending(false)
-        setError()
+        setError(err.message)
+        console.log(err.message)
       }
     }
   }
