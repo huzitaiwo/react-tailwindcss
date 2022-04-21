@@ -20,7 +20,7 @@ export default function Home() {
 
            <div className="mt-6">
             {/* card goes here */}
-            <div className="card hover:shadow-lg">
+            <div className="card hover:shadow-xl">
               <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
               <div className="m-4">
                 <span className="font-bold block">5 Bean Chili Stew</span>
@@ -37,7 +37,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card hover:shadow-lg">
+            <div className="card hover:shadow-xl">
               <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Ved Noodles</span>
@@ -54,7 +54,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card hover:shadow-lg">
+            <div className="card hover:shadow-xl">
               <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Tofu curry</span>
@@ -71,7 +71,7 @@ export default function Home() {
 
           <div className="mt-6">
             {/* card goes here */}
-            <div className="card hover:shadow-lg">
+            <div className="card hover:shadow-xl">
               <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
               <div className="m-4">
                 <span className="font-bold block">Tofu curry</span>
