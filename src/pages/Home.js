@@ -7,7 +7,7 @@ import bangersMash from  '../assets/bangers_and_mash.jpg'
 import chessBurger from '../assets/cheeseburger.jpg'
 import chichagoPizza from '../assets/chicago-style_pizza.jpg'
 import cottagePie from '../assets/cottage_pie.jpg'
-import delmonicoSteak from '../assets/assets/Delmonico_steak.jpg'
+import delmonicoSteak from '../assets/Delmonico_steak.jpg'
 import fishChips from '../assets/fish_and_chips.jpg'
 import freshSalad from '../assets/fresh_salad_and_appetizers.jpg'
 import englishBreakefast from '../assets/full_english_breakfast.jpg'
@@ -51,17 +51,17 @@ export default function Home() {
           <Card src={cottagePie} name='Cottage Pie' />
           <Card src={delmonicoSteak} name='Delmonico Steak' />
           <Card src={fishChips} name='Fish Chips' />
-          <Card src={freshSalad} name='f\Fresh Salad and Appetizers' />
+          <Card src={freshSalad} name='Fresh Salad and Appetizers' />
+          <Card src={englishBreakefast} name='English Breakfast' />
+          <Card src={grilledVegetables} name='Grilled Vegetables with Mushrooms' />
+          <Card src={mapleGlazedTurkey} name='Maple Glazed Turkey' />
+          {/* <Card src={curry} />
           <Card src={curry} />
           <Card src={curry} />
           <Card src={curry} />
           <Card src={curry} />
           <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
+          <Card src={curry} /> */}
         </div>
 
         <div className="flex justify-center mt-16">
