@@ -42,8 +42,8 @@ export default function Login() {
           </label>
           
           {error && <div>{error}</div>}
-          {isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner md:transform md:hover:scale-125 md:hover:bg-opacity-50 md:transition md:ease-out md:duration-300">loging in...</button>}
-          {!isPending && <button className="mt-5 btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner md:transform md:hover:scale-125 md:hover:bg-opacity-50 md:transition md:ease-out md:duration-300">login</button>}
+          {isPending && <button className="btn authBtn">loging in...</button>}
+          {!isPending && <button className="btn authBtn">login</button>}
         </form>
       </div>
     </div>
