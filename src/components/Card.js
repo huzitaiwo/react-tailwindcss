@@ -1,12 +1,12 @@
 
-export default function Cards() {
+export default function Card({ src, name, owner }) {
   return (
     <div className="mt-6">
       <div className="card hover:shadow-xl">
-        <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
+        <img className="w-full h-32 sm:h-48 object-cover" src={src} alt="" />
         <div className="m-4">
-          <span className="font-bold block">Tofu curry</span>
-          <span>Recipe by Blue</span>
+          <span className="font-bold block">{name}</span>
+          <span>Recipe by {owner}</span>
         </div>
         <div className="badge">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

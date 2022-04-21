@@ -2,6 +2,7 @@
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
+import Card from '../components/Card'
 import Header from '../components/Header'
 
 export default function Home() {
@@ -18,79 +19,34 @@ export default function Home() {
 
         <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
-           <div className="mt-6">
-            {/* card goes here */}
-            <div className="card hover:shadow-xl">
-              <img className="w-full h-32 sm:h-48 object-cover" src={stew} alt="" />
-              <div className="m-4">
-                <span className="font-bold block">5 Bean Chili Stew</span>
-                <span>Recipe by Mario</span>
-              </div>
-              <div className="badge">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>25mins</span>
-              </div>
-            </div>
-          </div>
+          {/* card goes here */}
+          <Card 
+            src={stew} 
+            name='Tofu curry'
+            owner='Mario'
+          />
 
-          <div className="mt-6">
-            {/* card goes here */}
-            <div className="card hover:shadow-xl">
-              <img className="w-full h-32 sm:h-48 object-cover" src={noodles} alt="" />
-              <div className="m-4">
-                <span className="font-bold block">Ved Noodles</span>
-                <span>Recipe by Luigi</span>
-              </div>
-              <div className="badge">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>25mins</span>
-              </div>
-            </div>
-          </div>
+          {/* card goes here */}
+          <Card 
+            src={noodles}
+            name='Ved Noodles'
+            owner='Luigi'
+          />
 
-          <div className="mt-6">
-            {/* card goes here */}
-            <div className="card hover:shadow-xl">
-              <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
-              <div className="m-4">
-                <span className="font-bold block">Tofu curry</span>
-                <span>Recipe by Blue</span>
-              </div>
-              <div className="badge">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>25mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6">
-            {/* card goes here */}
-            <div className="card hover:shadow-xl">
-              <img className="w-full h-32 sm:h-48 object-cover" src={curry} alt="" />
-              <div className="m-4">
-                <span className="font-bold block">Tofu curry</span>
-                <span>Recipe by Blue</span>
-              </div>
-              <div className="badge">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>25mins</span>
-              </div>
-            </div>
-          </div>
+          {/* card goes here */}
+          <Card 
+            src={curry}
+            name='Tofu curry'
+            owner='Blue'
+          />
+          
         </div>
 
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Most Popular</h4>
 
         <div className="mt-6">
           {/* card goes here */}
+          <Card src={curry} />
         </div>
 
         <div className="flex justify-center">
