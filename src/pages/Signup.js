@@ -34,11 +34,12 @@ export default function Signup() {
 
     setThumbnailError(null)
     setThumbnail(file)
+    console.log('thumbnail updated')
   }
 
   const handleSignup = e => {
     e.preventDefault()
-    signup(email, password, displayName)
+    console.log(email, password, displayName, thumbnail)
   }
 
   return (
@@ -51,7 +52,8 @@ export default function Signup() {
 
           <label className='block mb-5 w-full'>
             <span className='block mb-2'>email:</span>
-            <input className='block px-2 py-1' 
+            <input className='block px-2 py-1'
+            required 
               type="email"
               onChange={e => setEmail(e.target.value)}
               value={email}
@@ -60,7 +62,8 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>password:</span>
-            <input className='px-2 py-1' 
+            <input className='px-2 py-1'
+            required 
               type="password"
               onChange={e => setPassword(e.target.value)}
               value={password}
@@ -69,7 +72,8 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>display name:</span>
-            <input className='px-2 py-1' 
+            <input className='px-2 py-1'
+            required 
               type="text"
               onChange={e => setDisplayName(e.target.value)}
               value={displayName}
@@ -78,7 +82,8 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>profile thumbnail:</span>
-            <input className='px-2 py-1' 
+            <input className='px-2 py-1'
+            required 
               type="file"
               onChange={handleFileChange}
             />
