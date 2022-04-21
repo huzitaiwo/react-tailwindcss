@@ -39,7 +39,7 @@ export default function Signup() {
 
   const handleSignup = e => {
     e.preventDefault()
-    console.log(email, password, displayName, thumbnail)
+    signup(email, password, displayName, thumbnail)
   }
 
   return (
