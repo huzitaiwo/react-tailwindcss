@@ -13,6 +13,12 @@ import freshSalad from '../assets/fresh_salad_and_appetizers.jpg'
 import englishBreakefast from '../assets/full_english_breakfast.jpg'
 import grilledVegetables from '../assets/grilled_vegetables_with_mushrooms.jpg'
 import mapleGlazedTurkey from '../assets/maple_glazed_turkey_dinner.jpg'
+import nachos from '../assets/nachos.jpg'
+import hillyCheeseSteak from '../assets/philly_cheese_steak.jpg'
+import reubenSandwich from '../assets/reuben_sandwich.jpg'
+import steakKidney from '../assets/steak_and_kidney_pie.jpg'
+import sundayRoast from '../assets/sunday_roast.jpg'
+import toadHole from '../assets/toad_in_the_hole.jpg'
 
 //components
 import Card from '../components/Card'
@@ -55,13 +61,12 @@ export default function Home() {
           <Card src={englishBreakefast} name='English Breakfast' />
           <Card src={grilledVegetables} name='Grilled Vegetables with Mushrooms' />
           <Card src={mapleGlazedTurkey} name='Maple Glazed Turkey' />
-          {/* <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} />
-          <Card src={curry} /> */}
+          <Card src={nachos} name='Nachos' />
+          <Card src={hillyCheeseSteak} name='Hilly Cheese Steak' />
+          <Card src={reubenSandwich} name='Reuben Sandwich' />
+          <Card src={steakKidney} name='Steak and Kidney Pie' />
+          <Card src={sundayRoast} name='Sunday Roast' />
+          <Card src={toadHole} name='Toad in the Hole' />
         </div>
 
         <div className="flex justify-center mt-16">

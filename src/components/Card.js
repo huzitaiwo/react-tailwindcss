@@ -2,8 +2,8 @@
 export default function Card({ src, name, owner }) {
   return (
     <div className="mt-6">
-      <div className="card h-full hover:shadow-xl flex flex-col">
-        <img className="w-full h-32 sm:h-48 object-cover" src={src} alt="" />
+      <div className="card h-full hover:shadow-2xl flex flex-col">
+        <img className="w-full h-40 sm:h-48 object-cover" src={src} alt="" />
         <div className="m-4 flex-grow">
           <span className="font-bold block">{name}</span>
           <span>{owner}</span>
