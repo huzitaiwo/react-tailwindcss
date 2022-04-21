@@ -56,7 +56,7 @@ export default function Home() {
           <Card src={chichagoPizza} name='Chichago Pizza' />
           <Card src={cottagePie} name='Cottage Pie' />
           <Card src={delmonicoSteak} name='Delmonico Steak' />
-          <Card src={fishChips} name='Fish Chips' />
+          <Card src={fishChips} name='Fish and Chips' />
           <Card src={freshSalad} name='Fresh Salad and Appetizers' />
           <Card src={englishBreakefast} name='English Breakfast' />
           <Card src={grilledVegetables} name='Grilled Vegetables with Mushrooms' />
