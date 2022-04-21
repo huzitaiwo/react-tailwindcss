@@ -2,6 +2,13 @@
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
+import bakedSalmon from '../asssets/baked_salmon_with_cherry_tomatoes.jpg'
+import bangersMash from  '../assets/bangers_and_mash.jpg'
+import chessBurger from '../assets/cheeseburger.jpg'
+import chichagoPizza from '../assets/chicago-style_pizza.jpg'
+import cottagePie from '../assets/cottage_pie.jpg'
+
+//components
 import Card from '../components/Card'
 import Header from '../components/Header'
 
@@ -46,6 +53,23 @@ export default function Home() {
 
         <div className="mt-6">
           {/* card goes here */}
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
+          <Card src={curry} />
           <Card src={curry} />
         </div>
 
