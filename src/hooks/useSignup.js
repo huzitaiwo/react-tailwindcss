@@ -9,7 +9,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false)
   const [unMounted, setUnMounted] = useState(false)
 
-  const signup = async (email, password, displayName) => {
+  const signup = async (email, password, displayName, thumbnail) => {
     setError(null)
     setIsPending(true)
 
@@ -17,14 +17,17 @@ export const useSignup = () => {
       // sign user up
       const res = await firebaseAuth.createUserWithEmailAndPassword(email, password)
 
-      console.log(res)
-
       if (!res) {
         throw new Error('Colud not complete signup')
       }
 
+      //upload user thumbnail
+      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
+      const photo = await firebaseStorage.ref(uploadPath).put(thumbnail)
+      const photoURL = await photo.ref.getDownloadURL()
+
       // add displayName to user
-      await res.user.updateProfile({ displayName })
+      await res.user.updateProfile({ displayName, photoURL })
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
@@ -38,9 +41,9 @@ export const useSignup = () => {
 
     catch (err) {
       if (!unMounted) {
+        setIsPending(false)
         console.log(err.message)
         setError(err.message)
-        setIsPending(false)
       }
     }
   }
