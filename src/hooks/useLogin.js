@@ -30,7 +30,8 @@ export const useLogin = (email, password) => {
     catch(err) {
       if (!unMounted) {
         setIsPending(false)
-        setError()
+        setError(err.message)
+        console.log(err.message)
       }
     }
   }
