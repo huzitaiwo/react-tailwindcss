@@ -2,7 +2,7 @@
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
 import stew from '../assets/stew.jpg'
-import bakedSalmon from '../asssets/baked_salmon_with_cherry_tomatoes.jpg'
+import bakedSalmon from '../assets/baked_salmon_with_cherry_tomatoes.jpg'
 import bangersMash from  '../assets/bangers_and_mash.jpg'
 import chessBurger from '../assets/cheeseburger.jpg'
 import chichagoPizza from '../assets/chicago-style_pizza.jpg'
@@ -26,34 +26,19 @@ export default function Home() {
 
         <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
-          {/* card goes here */}
-          <Card 
-            src={stew} 
-            name='Tofu curry'
-            owner='Mario'
-          />
+          <Card src={stew} name='Tofu curry' owner='Mario' />
 
-          {/* card goes here */}
-          <Card 
-            src={noodles}
-            name='Ved Noodles'
-            owner='Luigi'
-          />
+          <Card src={noodles} name='Ved Noodles' owner='Luigi' />
 
-          {/* card goes here */}
-          <Card 
-            src={curry}
-            name='Tofu curry'
-            owner='Blue'
-          />
-          
+          <Card src={curry} name='Tofu curry' owner='Blue' />
+        
         </div>
 
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Most Popular</h4>
 
-        <div className="mt-6">
+        <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {/* card goes here */}
-          <Card src={curry} />
+          <Card src={bakedSalmon} name='Baked Salmon with cherry tomatoes' />
           <Card src={curry} />
           <Card src={curry} />
           <Card src={curry} />
