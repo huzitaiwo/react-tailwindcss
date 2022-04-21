@@ -49,7 +49,7 @@ export default function Home() {
           <Card src={curry} />
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-16">
           <button className="btn bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">Load more</button>
         </div>
       </div>
