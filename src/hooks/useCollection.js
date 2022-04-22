@@ -10,7 +10,11 @@ export const useCollection = collection => {
     setError(null)
     setIsPending(true)
 
-    let ref = firebaseFirestore.collection(collection)
+    let ref = firebaseFirestore.collection(collection, query)
+
+    if(query) {
+      ref = ref.where(...query)
+    }
 
     const unsubscribe = ref.onSnapshot(snapshot => {
       let results = []
