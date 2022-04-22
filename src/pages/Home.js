@@ -1,3 +1,5 @@
+import { useAuthContext } from '../hooks/useAuthContext'
+
 //images
 import curry from '../assets/curry.jpg'
 import noodles from '../assets/noodles.jpg'
@@ -25,6 +27,9 @@ import Card from '../components/Card'
 import Header from '../components/Header'
 
 export default function Home() {
+  const { user } = useAuthContext()
+
+  // uid = {user.id}
 
   return (
     <>
