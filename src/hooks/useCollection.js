@@ -1,16 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { firebaseFirestore } from "../firebase/config"
 
-export const useCollection = collection => {
+export const useCollection = (collection, _query) => {
   const [documents, setDocuments] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
+
+
+  //if we dont use ref --> infinite loop in useEffect
+  //_query is an arry and is "different" on every function call
+  const query = useRef(_query).current
 
   useEffect(() => {
     setError(null)
     setIsPending(true)
 
-    let ref = firebaseFirestore.collection(collection, query)
+    let ref = firebaseFirestore.collection(collection)
 
     if(query) {
       ref = ref.where(...query)
@@ -33,7 +38,7 @@ export const useCollection = collection => {
     //unsubscribe
     return () => unsubscribe()
 
-  }, [collection])
+  }, [collection, query])
 
   return { documents, isPending, error }
 }
