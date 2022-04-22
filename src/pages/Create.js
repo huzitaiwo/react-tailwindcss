@@ -13,6 +13,7 @@ export default function Create() {
 
 
   const handleSubmit = e => {
+    e.preventDefault()
     console.log(name, ingredients, method, cookingTime)
   }
 
@@ -46,54 +47,54 @@ export default function Create() {
             <h2 className='text-2xl font-bold mb-4'>Add a Meal</h2>
 
             <label className='block mb-5 w-full'>
-            <span className='block mb-2'>Meal name:</span>
-            <input className='block px-2 py-1' 
+              <span className='block mb-2'>Meal name:</span>
+              <input className='block px-2 py-1' 
                 type="text"
                 onChange={e => setName(e.target.value)}
                 value={name}
-            />
+              />
             </label>
 
             <label className='block mb-5 w-full'>
-            <span className='block mb-2'>Cooking time:</span>
-            <input className='block px-2 py-1' 
+              <span className='block mb-2'>Cooking time:</span>
+              <input className='block px-2 py-1' 
                 type="number"
                 onChange={e => setCookingTime(e.target.value)}
                 value={cookingTime}
-            />
+              />
             </label>
 
-            <label>
-            <span>Method</span>
-            <div className="ingredients">
+            <label className='block mb-5 w-full'>
+              <span>Methods</span>
+              <div className="flex items-center">
                 <input 
-                type="text"
+                type="text" className='block px-2 py-1'
                 onChange={e => setNewMethod(e.target.value)}
                 value={newMethod}
                 ref={methodInput}
                 />
-                <button className='btn' onClick={handleAddMethod}>add</button>
-            </div>
+                <button className='btn authBtn' onClick={handleAddMethod}>add</button>
+              </div>
             </label>
-            <p>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
+            <p className='text-xs mb-5'>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
 
-            <label>
-            <span>Meal ingredients</span>
-            <div className="ingredients">
+            <label className='block mb-5 w-full'>
+              <span>Meal ingredients</span>
+              <div className="flex items-center">
                 <input 
                 type="text"
                 onChange={e => setNewIngredient(e.target.value)}
                 value={newIngredient}
                 ref={ingredientInput}
                 />
-                <button className='btn' onClick={handleAddIngredient}>add</button>
-            </div>
+                <button className='btn authBtn' onClick={handleAddIngredient}>add</button>
+              </div>
             </label>
-            <p>Current ingredients: {ingredients && ingredients.map(i => <em key={i}>{i}, </em>)}</p>
+            <p className='text-xs'>Current ingredients: {ingredients && ingredients.map(i => <em key={i}>{i}, </em>)}</p>
             
-            {/* {error && <div className="error">{error}</div>}
-            {isPending && <button className="btn authBtn">loging in...</button>}
-            {!isPending && <button className="btn authBtn">login</button>} */}
+            {/* {error && <div className="error">{error}</div>} */}
+            {/* {isPending && <button className="btn authBtn">loging in...</button>} */}
+            <button className="btn authBtn">Create</button>
             </form>
         </div>
     </div>

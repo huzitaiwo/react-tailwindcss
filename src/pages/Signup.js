@@ -17,7 +17,6 @@ export default function Signup() {
     setThumbnail(null)
 
     let file = e.target.files[0]
-    console.log(file)
 
     if (!file) {
       setThumbnailError('Please select an image file')
@@ -34,7 +33,6 @@ export default function Signup() {
 
     setThumbnailError(null)
     setThumbnail(file)
-    console.log('thumbnail updated')
   }
 
   const handleSignup = e => {

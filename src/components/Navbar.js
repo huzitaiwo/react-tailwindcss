@@ -45,7 +45,7 @@ export default function Navbar() {
         </div>
         {(toggleMenu || screenWidth > 768) && (
           <ul className='text-sm '>
-            <li className='active text-gray-700 font-bold border-r-4 border-gray-700 py-1'>
+            <li className='active text-gray-700 font-bold border-r-4 border-red-500 py-1'>
               <NavLink to='/' className='px-4 flex justify-end'>
                 <span>Home</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
