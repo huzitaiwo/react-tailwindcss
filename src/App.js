@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Create from './pages/Create';
 import Navbar from './components/Navbar'
 
 
@@ -23,6 +24,7 @@ function App() {
             <main className='px-6 md:px-14 py-6 bg-gray-100 md:col-span-2 min-h-screen'>
               <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/create' element={<Create />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/signup' element={<Signup />} />
