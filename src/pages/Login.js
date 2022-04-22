@@ -26,7 +26,7 @@ export default function Login() {
           <label className='block mb-5 w-full'>
             <span className='block mb-2'>email:</span>
             <input className='block px-2 py-1' 
-              type="email"
+              type="text"
               onChange={e => setEmail(e.target.value)}
               value={email}
             />
