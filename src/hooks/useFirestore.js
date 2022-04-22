@@ -10,6 +10,12 @@ let initalState = {
 
 const firestoreReducer = (state, action) => {
   switch(action.type) {
+    case 'IS_PENDNG':
+      return { document: null, success: false, isPending: true, error: null }
+    case 'ERROR':
+      return { document: null, success: false, isPending: false, error: action.payload }
+    case 'ADDED_DOCUMENT':
+      return { document: action.payload, success: true, isPending: false, error: null }
     default:
       return state
   }
@@ -22,9 +28,23 @@ export const useFirestore = collecion => {
   //collection reference
   const ref = firebaseFirestore.collection(collecion)
 
+  const dispatchIfNotUnMounted = action => {
+    if(!isUnMounted) {
+      dispatch(action)
+    }
+  }
+
   //add a document
   const addDocument = async doc => {
-    
+    dispatch({ type: 'IS_PENDIND', })
+
+    try {
+      const addedDocument = await ref.add(doc)
+      dispatchIfNotUnMounted({ type: 'ADDED_DOCUMENT', payload: addedDocument })
+    }
+    catch(err) {
+      dispatchIfNotUnMounted({ type: 'ERROR', payload: err })
+    }
   }
 
   //add a document
