@@ -18,7 +18,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-input {
+/* input {
   outline-color: #e5e7eb;
   outline-width: 1px;
   font-size: 0.8rem !important;
@@ -32,14 +32,26 @@ input {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
-}
+} */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* text-gray-700 font-bold border-r-4 border-red-500 */
+.navLink {
+  color: #4b5563;
+  border-right: 4px solid #fff;
+}
+.navLink.active {
+  color: #374151;
+  font-weight: bold;
+  border-right: 4px solid #ff6363;
+}
+
 .card {
-  @apply bg-white rounded overflow-hidden shadow-md relative;
+  @apply bg-white rounded overflow-hidden shadow-md;
 }
 
 .badge {
