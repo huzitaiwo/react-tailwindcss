@@ -1,7 +1,12 @@
 import { useState, useRef } from 'react'
+import { useFirestore } from '../hooks/useFirestore'
+
+//components
 import Header from '../components/Header'
 
 export default function Create() {
+  const { addDocument, response } = useFirestore('meals')
+
   const [name, setName] = useState('')
   const [cookingTime, setCookingTime] = useState('')
   const [method, setMethod] = useState('')
@@ -14,7 +19,7 @@ export default function Create() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(name, ingredients, method, cookingTime)
+    addDocument(name, ingredients, method, cookingTime)
   }
 
   const handleAddIngredient = e => {
@@ -40,13 +45,13 @@ export default function Create() {
   }
 
   return (
-    <div className='w-full'>
+    <div>
       <Header />
-      <div className='flex justify-center'>
+      <div className='p-6 md:p-3'>
         <form onSubmit={handleSubmit}>
-            <h2 className='text-2xl font-bold mb-4'>Add a Meal</h2>
+            <h2 className='text-2xl font-bold mb-6 pb-3 border-b border-gray-200'>Add a Meal</h2>
 
-            <label className='block mb-5 w-full'>
+            <label className='block mb-5'>
               <span className='block mb-2'>Meal name:</span>
               <input className='input' 
                 type="text"
@@ -55,7 +60,7 @@ export default function Create() {
               />
             </label>
 
-            <label className='block mb-5 w-full'>
+            <label className='block mb-5'>
               <span className='block mb-2'>Cooking time:</span>
               <input className='input' 
                 type="number"
@@ -64,7 +69,7 @@ export default function Create() {
               />
             </label>
 
-            <label className='block mb-5 w-full'>
+            <label className='block mb-5'>
               <span>Methods</span>
               <div className="flex items-center">
                 <input className='input'
@@ -78,7 +83,7 @@ export default function Create() {
             </label>
             <p className='text-xs mb-5'>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
 
-            <label className='block mb-5 w-full'>
+            <label className='block mb-5'>
               <span>Meal ingredients</span>
               <div className="flex items-center">
                 <input className='input'
