@@ -12,13 +12,14 @@ export default function Login() {
 
   const handleLogin = e => {
     e.preventDefault()
+    console.log(email)
     login(email, password)
   }
 
   return (
     <div>
       <Header />
-      <div className='flex justify-center'>
+      <div className='bg-white p-16 w-89 mx-auto'>
 
         <form onSubmit={handleLogin}>
           <h2 className='text-2xl font-bold mb-4'>Login</h2>
@@ -26,7 +27,7 @@ export default function Login() {
           <label className='block mb-5 w-full'>
             <span className='block mb-2'>email:</span>
             <input className='block px-2 py-1' 
-              type="text"
+              type="email"
               onChange={e => setEmail(e.target.value)}
               value={email}
             />

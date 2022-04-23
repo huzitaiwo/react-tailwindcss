@@ -1,45 +1,43 @@
-import { useState, useEffect } from 'react'
-import { firebaseAuth } from '../firebase/config'
-import { useAuthContext } from './useAuthContext'
+import { useState, useEffect } from "react"
+import { firebaseAuth } from "../firebase/config"
+import { useAuthContext } from "./useAuthContext"
 
-export const useLogin = (email, password) => {
-  const { dispatch } = useAuthContext()
-  
-  const [error, setError] = useState(null)
-  const [isPending, setIsPending] = useState(false)
+export const useLogin = () => {
   const [unMounted, setUnMounted] = useState(false)
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
+  const { dispatch } = useAuthContext()
 
-  const login = async () => {
+  const login = async (email, password) => {
     setError(null)
     setIsPending(true)
 
-    // sign user out
     try {
       const res = await firebaseAuth.signInWithEmailAndPassword(email, password)
+      
+      if(!res) {
+        throw new Error('Could not complete login')
+      }
 
-      //dispatch login action
+      // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
 
-      // update states
       if (!unMounted) {
-        setIsPending(false)
         setError(null)
+        setIsPending(false)
       }
     }
-    
-    catch(err) {
+    catch (err) {
       if (!unMounted) {
-        setIsPending(false)
         setError(err.message)
-        console.log(err.message)
+        setIsPending(false)
       }
     }
   }
 
   useEffect(() => {
     return () => setUnMounted(true)
-  }, [])
+  },[])
 
-  return { login, error, isPending }
-
+  return { isPending, error, login }
 }
