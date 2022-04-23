@@ -77,6 +77,7 @@ export default function Create() {
             <label className='block mb-5'>
               <span className='block mb-2'>Meal name:</span>
               <input className='input'
+                required
                 type="text"
                 onChange={e => setName(e.target.value)}
                 value={name}
@@ -85,7 +86,8 @@ export default function Create() {
 
             <label className='block mb-5'>
               <span className='block mb-2'>Cooking time:</span>
-              <input className='input' 
+              <input className='input'
+                required
                 type="number"
                 onChange={e => setCookingTime(e.target.value)}
                 value={cookingTime}
@@ -121,7 +123,7 @@ export default function Create() {
             <p className='text-xs mb-5'>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
 
             <label className='block mb-5'>
-              <span className='block mb-2'>profile thumbnail:</span>
+              <span className='block mb-2'>meal thumbnail:</span>
               <input className='input bg-gray-50'
                 required 
                 type="file"
@@ -132,7 +134,9 @@ export default function Create() {
 
 
             <div className='mt-5'>
-              <button className="btn authBtn">Create</button>
+
+              {!response.isPending && <button className="btn authBtn">Add meal</button>}
+              {response.isPending && <button disabled className="btn authBtn">Adding meal...</button>}
             </div>
             </form>
         </div>
