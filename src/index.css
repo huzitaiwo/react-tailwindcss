@@ -39,7 +39,6 @@ code {
 @tailwind utilities;
 
 
-/* text-gray-700 font-bold border-r-4 border-red-500 */
 .navLink {
   color: #4b5563;
   border-right: 4px solid #fff;
