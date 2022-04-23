@@ -87,6 +87,7 @@ export default function Signup() {
             />
             {thumbnailError && <div className='error'>{thumbnailError}</div>}
           </label>
+          
           <div className='mt-2'>
             {!isPending && <button className="btn authBtn">Sign up</button>}
             {isPending && <button disabled className="btn authBtn">signing up...</button>}

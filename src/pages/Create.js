@@ -15,12 +15,8 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const ingredientInput = useRef(null)
   const methodInput = useRef(null)
-
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    addDocument(name, ingredients, method, cookingTime)
-  }
+  const [thumbnail, setThumbnail] = useState(null)
+  const [thumbnailError, setThumbnailError] = useState(null)
 
   const handleAddIngredient = e => {
     e.preventDefault()
@@ -44,6 +40,33 @@ export default function Create() {
     methodInput.current.focus()
   }
 
+  const handleFileChange = e => {
+    setThumbnail(null)
+
+    let file = e.target.files[0]
+
+    if (!file) {
+      setThumbnailError('Please select an image file')
+      return
+    }
+    if (!file.type.includes('image')) {
+      setThumbnailError('Selected file must be an image')
+      return
+    }
+    if (file.size > 1000000) {
+      setThumbnailError('Image file size must be less than 1MB')
+      return 
+    }
+
+    setThumbnailError(null)
+    setThumbnail(file)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    addDocument({name, ingredients, method, cookingTime})
+  }
+
   return (
     <div>
       <Header />
@@ -53,7 +76,7 @@ export default function Create() {
 
             <label className='block mb-5'>
               <span className='block mb-2'>Meal name:</span>
-              <input className='input' 
+              <input className='input'
                 type="text"
                 onChange={e => setName(e.target.value)}
                 value={name}
@@ -70,7 +93,21 @@ export default function Create() {
             </label>
 
             <label className='block mb-5'>
-              <span>Methods</span>
+              <span className='block mb-2'>Meal ingredients</span>
+              <div className="flex items-center">
+                <input className='input'
+                type="text"
+                onChange={e => setNewIngredient(e.target.value)}
+                value={newIngredient}
+                ref={ingredientInput}
+                />
+                <button className='btn authBtn ml-2' onClick={handleAddIngredient}>add</button>
+              </div>
+            </label>
+            <p className='text-xs mb-5'>Current ingredients: {ingredients && ingredients.map(i => <em key={i}>{i}, </em>)}</p>
+
+            <label className='block mb-5'>
+              <span className='block mb-2'>Methods</span>
               <div className="flex items-center">
                 <input className='input'
                   type="text" 
@@ -84,18 +121,15 @@ export default function Create() {
             <p className='text-xs mb-5'>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
 
             <label className='block mb-5'>
-              <span>Meal ingredients</span>
-              <div className="flex items-center">
-                <input className='input'
-                type="text"
-                onChange={e => setNewIngredient(e.target.value)}
-                value={newIngredient}
-                ref={ingredientInput}
-                />
-                <button className='btn authBtn ml-2' onClick={handleAddIngredient}>add</button>
-              </div>
+              <span className='block mb-2'>profile thumbnail:</span>
+              <input className='input bg-gray-50'
+                required 
+                type="file"
+                onChange={handleFileChange}
+              />
+              {thumbnailError && <div className='error'>{thumbnailError}</div>}
             </label>
-            <p className='text-xs'>Current ingredients: {ingredients && ingredients.map(i => <em key={i}>{i}, </em>)}</p>
+
 
             <div className='mt-5'>
               <button className="btn authBtn">Create</button>

@@ -10,7 +10,7 @@ let initalState = {
 
 const firestoreReducer = (state, action) => {
   switch(action.type) {
-    case 'IS_PENDNG':
+    case 'IS_PENDING':
       return { document: null, success: false, isPending: true, error: null }
     case 'ERROR':
       return { document: null, success: false, isPending: false, error: action.payload }
@@ -36,7 +36,7 @@ export const useFirestore = collecion => {
 
   //add a document
   const addDocument = async doc => {
-    dispatch({ type: 'IS_PENDIND', })
+    dispatch({ type: 'IS_PENDING', })
 
     try {
       const createdAt = timestamp.fromDate(new Date())
