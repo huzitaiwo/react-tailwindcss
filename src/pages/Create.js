@@ -48,7 +48,7 @@ export default function Create() {
 
             <label className='block mb-5 w-full'>
               <span className='block mb-2'>Meal name:</span>
-              <input className='block px-2 py-1' 
+              <input className='input' 
                 type="text"
                 onChange={e => setName(e.target.value)}
                 value={name}
@@ -57,7 +57,7 @@ export default function Create() {
 
             <label className='block mb-5 w-full'>
               <span className='block mb-2'>Cooking time:</span>
-              <input className='block px-2 py-1' 
+              <input className='input' 
                 type="number"
                 onChange={e => setCookingTime(e.target.value)}
                 value={cookingTime}
@@ -67,13 +67,13 @@ export default function Create() {
             <label className='block mb-5 w-full'>
               <span>Methods</span>
               <div className="flex items-center">
-                <input 
-                type="text" className='block px-2 py-1'
-                onChange={e => setNewMethod(e.target.value)}
-                value={newMethod}
-                ref={methodInput}
+                <input className='input'
+                  type="text" 
+                  onChange={e => setNewMethod(e.target.value)}
+                  value={newMethod}
+                  ref={methodInput}
                 />
-                <button className='btn authBtn' onClick={handleAddMethod}>add</button>
+                <button className='btn authBtn ml-2' onClick={handleAddMethod}>add</button>
               </div>
             </label>
             <p className='text-xs mb-5'>Current method: {method && method.map(i => <em key={i}>{i}, </em>)}</p>
@@ -81,20 +81,20 @@ export default function Create() {
             <label className='block mb-5 w-full'>
               <span>Meal ingredients</span>
               <div className="flex items-center">
-                <input 
+                <input className='input'
                 type="text"
                 onChange={e => setNewIngredient(e.target.value)}
                 value={newIngredient}
                 ref={ingredientInput}
                 />
-                <button className='btn authBtn' onClick={handleAddIngredient}>add</button>
+                <button className='btn authBtn ml-2' onClick={handleAddIngredient}>add</button>
               </div>
             </label>
             <p className='text-xs'>Current ingredients: {ingredients && ingredients.map(i => <em key={i}>{i}, </em>)}</p>
-            
-            {/* {error && <div className="error">{error}</div>} */}
-            {/* {isPending && <button className="btn authBtn">loging in...</button>} */}
-            <button className="btn authBtn">Create</button>
+
+            <div className='mt-5'>
+              <button className="btn authBtn">Create</button>
+            </div>
             </form>
         </div>
     </div>

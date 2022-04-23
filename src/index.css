@@ -58,11 +58,11 @@ code {
 }
 
 .btn {
-  @apply text-xs rounded-md px-4 py-2 font-bold cursor-pointer tracking-wider;
+  @apply text-xs rounded-sm px-4 py-2 font-bold cursor-pointer tracking-wider;
 }
 
 .authBtn {
-  @apply mt-5 bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300;
+  @apply bg-gray-600 hover:bg-gray-800 text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300;
 }
 
 .input {
