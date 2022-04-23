@@ -19,7 +19,7 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <div className='p-6 md:p-3'>
+      <div className='p-2 md:p-6'>
 
         <form onSubmit={handleLogin}>
           <h2 className='text-2xl font-bold mb-6 pb-3 border-b border-gray-200'>Login</h2>

@@ -47,7 +47,7 @@ export default function Create() {
   return (
     <div>
       <Header />
-      <div className='p-6 md:p-3'>
+      <div className='p-2 md:p-6'>
         <form onSubmit={handleSubmit}>
             <h2 className='text-2xl font-bold mb-6 pb-3 border-b border-gray-200'>Add a Meal</h2>
 

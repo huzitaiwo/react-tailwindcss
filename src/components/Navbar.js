@@ -44,7 +44,7 @@ export default function Navbar() {
           </button>
         </div>
         {(toggleMenu || screenWidth > 768) && (
-          <ul className='text-sm'>
+          <ul onClick={() => setToggleMenu(false)} className='text-sm'>
             <li className='py-1'>
               <NavLink to='/' className='navLink px-4 flex justify-end'>
                 <span>Home</span>
