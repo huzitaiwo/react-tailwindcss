@@ -43,15 +43,15 @@ export default function Signup() {
   return (
     <div>
       <Header />
-      <div className='flex justify-center'>
+      <div className='p-6 md:p-3'>
 
         <form onSubmit={handleSignup}>
-          <h2 className='text-2xl font-bold mb-4'>Sign up</h2>
+          <h2 className='text-2xl font-bold mb-6 pb-3 border-b border-gray-200'>Sign up</h2>
 
-          <label className='block mb-5 w-full'>
+          <label className='block mb-5'>
             <span className='block mb-2'>email:</span>
-            <input className='block px-2 py-1'
-            required 
+            <input className='input'
+              required 
               type="email"
               onChange={e => setEmail(e.target.value)}
               value={email}
@@ -60,8 +60,8 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>password:</span>
-            <input className='px-2 py-1'
-            required 
+            <input className='input'
+              required 
               type="password"
               onChange={e => setPassword(e.target.value)}
               value={password}
@@ -70,8 +70,8 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>display name:</span>
-            <input className='px-2 py-1'
-            required 
+            <input className='input'
+              required 
               type="text"
               onChange={e => setDisplayName(e.target.value)}
               value={displayName}
@@ -80,17 +80,18 @@ export default function Signup() {
 
           <label className='block mb-5'>
             <span className='block mb-2'>profile thumbnail:</span>
-            <input className='px-2 py-1'
-            required 
+            <input className='input bg-gray-50'
+              required 
               type="file"
               onChange={handleFileChange}
             />
             {thumbnailError && <div className='error'>{thumbnailError}</div>}
           </label>
-          
-          {!isPending && <button className="btn authBtn">Sign up</button>}
-          {isPending && <button disabled className="btn authBtn">signing up...</button>}
-          {error && <div className='error'>{error}</div>}
+          <div className='mt-2'>
+            {!isPending && <button className="btn authBtn">Sign up</button>}
+            {isPending && <button disabled className="btn authBtn">signing up...</button>}
+            {error && <div className='error'>{error}</div>}
+          </div>
         </form>
       </div>
     </div>
