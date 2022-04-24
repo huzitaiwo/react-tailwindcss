@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
 // styles and components
@@ -13,7 +13,7 @@ import Navbar from './components/Navbar'
 
 
 function App() {
-  const { authIsReady } = useAuthContext()
+  const { authIsReady, user } = useAuthContext()
 
   return (
     <div className="App font-poppins text-gray-600">
@@ -23,12 +23,12 @@ function App() {
             <Navbar />
             <main className='px-6 md:px-14 py-6 bg-gray-100 md:col-span-2 min-h-screen'>
               <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/create' element={<Create />} />
+                <Route path='/' element={!user ? <Navigate to='/login' /> : <Home />} />
+                <Route path='/create' element={!user ? <Navigate to='/login' /> : <Create />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/signup' element={<Signup />} />
-                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={user ? <Navigate to='/' /> : <Signup />} />
+                <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
               </Routes>
             </main>
           </BrowserRouter>
