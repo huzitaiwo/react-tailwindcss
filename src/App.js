@@ -8,8 +8,9 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Create from './pages/Create';
+import Create from './pages/Create'
 import Navbar from './components/Navbar'
+import Meal from './pages/Meal'
 
 
 function App() {
@@ -25,10 +26,11 @@ function App() {
               <Routes>
                 <Route path='/' element={!user ? <Navigate to='/login' /> : <Home />} />
                 <Route path='/create' element={!user ? <Navigate to='/login' /> : <Create />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
                 <Route path='/signup' element={user ? <Navigate to='/' /> : <Signup />} />
                 <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
+                <Route path='/meals/:id' element={<Meal />}/>
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
               </Routes>
             </main>
           </BrowserRouter>
