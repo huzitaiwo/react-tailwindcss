@@ -33,6 +33,13 @@ export default function Home() {
 
   // uid = {user.id}
 
+  if (error) {
+    return <h2>{error}</h2>
+  }
+  if(isPending) {
+    return <h2>loading...</h2>
+  }
+
   return (
     <>
       <Header />
