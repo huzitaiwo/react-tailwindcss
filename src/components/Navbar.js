@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 export default function Navbar() {
+  const { user } = useAuthContext()
+
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
@@ -27,9 +30,10 @@ export default function Navbar() {
     <div className='md:col-span-1 md:flex md:justify-end'>
       <nav className='text-right'>
         <div className='pl-3 py-3 md:p-0 flex justify-between items-center'>
-          <h1 className='text-3xl font-bold'>
+          <h1 className='text-3xl mt-2 mb-4 font-bold'>
             <Link className='hover:text-gray-800' to='/'>SweetMealsss</Link>
           </h1>
+          
           <button onClick={toggleNav} className="px-4 cursor-pointer md:hidden">
             {toggleMenu && (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -43,6 +47,7 @@ export default function Navbar() {
             )}
           </button>
         </div>
+        {user && <h4 className='text-xl text-bold mb-8'>&#128075; Hi! {user.displayName}</h4>}
         {(toggleMenu || screenWidth > 768) && (
           <ul onClick={() => setToggleMenu(false)} className='text-sm'>
             <li className='py-1'>
