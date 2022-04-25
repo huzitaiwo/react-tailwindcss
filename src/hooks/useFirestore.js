@@ -4,22 +4,22 @@ import { firebaseFirestore, timestamp } from '../firebase/config'
 let initialState = {
   document: null,
   error: null,
-  isLoading: false,
+  isPending: false,
   success: null
 }
 
 const firestoreReducer = (state, action) => {
   switch (action.type) {
     case 'IS_LOADING':
-      return { isLoading: true, document: null, error: null, success: null }
+      return { isPending: true, document: null, error: null, success: null }
     case 'ADD_DOCUMENT':
-      return { isLoading: false, document: action.payload, error: null, success: true }
+      return { isPending: false, document: action.payload, error: null, success: true }
     case 'DELETE_DOCUMENT':
-      return { isLoading: false, document: null, error: null, success: true }
+      return { isPending: false, document: null, error: null, success: true }
     case 'UPDATE_DOCUMENT':
-      return { isLoading: false, document: action.payload, error: null, success: true }
+      return { isPending: false, document: action.payload, error: null, success: true }
     case 'ERROR':
-      return { isLoading: false, document: null, error: action.payload, success: false }
+      return { isPending: false, document: null, error: action.payload, success: false }
     default:
       return state
   }

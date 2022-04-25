@@ -4,13 +4,13 @@ import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
   const [unMounted, setUnMounted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
 
   const singup = async (email, password, displayName, thumbnail) => {
     setError(null)
-    setIsLoading(true)
+    setIsPending(true)
 
     try {
       // signup user
@@ -33,14 +33,14 @@ export const useSignup = () => {
       
       if (!unMounted) {
         setError(null)
-        setIsLoading(false)
+        setIsPending(false)
       }
     }
 
     catch(err) {
       if (!unMounted) {
         setError(err.message)
-        setIsLoading(false)
+        setIsPending(false)
       }
     }
     
@@ -50,5 +50,5 @@ export const useSignup = () => {
     return () => setUnMounted(true)
   },[])
 
-  return { isLoading, error, singup }
+  return { isPending, error, singup }
 }

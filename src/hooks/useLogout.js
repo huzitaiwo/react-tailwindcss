@@ -3,13 +3,13 @@ import { firebaseAuth, firebaseFirestore } from "../firebase/config"
 import { useAuthContext } from './useAuthContext'
 
 export const useLogout = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
   const { dispatch, user } = useAuthContext()
 
   const logout = async () => {
     setError(null)
-    setIsLoading(true)
+    setIsPending(true)
 
     // sign user out
     try {
@@ -23,14 +23,14 @@ export const useLogout = () => {
       dispatch({ type: 'LOGOUT' })
 
       // update state
-      setIsLoading(false)
+      setIsPending(false)
       setError(null)
     }
     catch(err) {
       setError(err.message)
-      setIsLoading(false)
+      setIsPending(false)
     }
   }
 
-  return { isLoading, error, logout }
+  return { isPending, error, logout }
 }
