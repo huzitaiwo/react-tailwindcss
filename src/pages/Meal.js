@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useDocument } from '../hooks/useDocument'
 
 export default function Meal() {
+  const Navigate = useNavigate()
   const { id } = useParams()
   const { document: meal, isPending, error } = useDocument('meals', id)
 
@@ -14,10 +15,15 @@ export default function Meal() {
 
   return (
     <div>
+      <button onClick={() => Navigate('/')}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+      </button>
       {meal && (
         <>
-        <div className="flex-justify-between">
-          <h2 className='text-2xl font-bold mb-6 pb-3 border-b border-gray-200 uppercase'>{meal.name}</h2>  
+        <div className="md:flex items-center justify-between mb-6 pb-3 border-b border-gray-200 ">
+          <h2 className='text-2xl font-bold uppercase'>{meal.name}</h2>  
           <p>{meal.cookingTime} minutes to cook</p>
         </div>
 
