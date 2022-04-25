@@ -8,7 +8,7 @@ export default function Header() {
   const { user } = useAuthContext()
 
   return (
-    <header className="flex justify-end mb-5">
+    <header className="flex md:justify-end mb-5">
 
       {!user && (
         <>

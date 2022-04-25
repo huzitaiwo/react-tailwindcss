@@ -17,7 +17,7 @@ function App() {
   const { authIsReady, user } = useAuthContext()
 
   return (
-    <div className="App font-poppins text-gray-600">
+    <div className="App text-gray-600">
       {authIsReady && (
         <div className='grid md:grid-cols-3'>
           <BrowserRouter>
