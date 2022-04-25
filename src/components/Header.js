@@ -24,7 +24,7 @@ export default function Header() {
             {!isPending && <button onClick={logout} className="btn text-gray-600 hover:bg-gray-600 hover:text-white mx-2 md:border transition ease-in-out duration-500">
               Logout
             </button>}
-            {!isPending && <button disabled className="btn text-gray-600 hover:bg-gray-600 hover:text-white mx-2 md:border transition ease-in-out duration-500">
+            {isPending && <button disabled className="btn text-gray-600 hover:bg-gray-600 hover:text-white mx-2 md:border transition ease-in-out duration-500">
               Loging out...
             </button>}
           </>
