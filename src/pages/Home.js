@@ -1,9 +1,10 @@
 import { useAuthContext } from '../hooks/useAuthContext'
+import { useCollection } from '../hooks/useCollection'
 
 //images
-import curry from '../assets/curry.jpg'
-import noodles from '../assets/noodles.jpg'
-import stew from '../assets/stew.jpg'
+// import curry from '../assets/curry.jpg'
+// import noodles from '../assets/noodles.jpg'
+// import stew from '../assets/stew.jpg'
 import bakedSalmon from '../assets/baked_salmon_with_cherry_tomatoes.jpg'
 import bangersMash from  '../assets/bangers_and_mash.jpg'
 import chessBurger from '../assets/cheeseburger.jpg'
@@ -28,6 +29,7 @@ import Header from '../components/Header'
 
 export default function Home() {
   const { user } = useAuthContext()
+  const { documents, isPending, error } = useCollection('meals')
 
   // uid = {user.id}
 
@@ -39,15 +41,9 @@ export default function Home() {
         <h3 className="text-2xl font-semibold">For Ninjas</h3>
       </div>
       <div>
-        <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Recipes</h4>
+        <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Meals</h4>
 
         <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
-
-          <Card src={stew} name='Tofu curry' owner='Mario' />
-
-          <Card src={noodles} name='Ved Noodles' owner='Luigi' />
-
-          <Card src={curry} name='Tofu curry' owner='Blue' />
         
         </div>
 
@@ -55,7 +51,10 @@ export default function Home() {
 
         <div className="mt-6 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {/* card goes here */}
-          <Card src={bakedSalmon} name='Baked Salmon with cherry tomatoes' />
+          {documents && documents.map(meal => (
+            <Card meal={meal} />
+          ))}
+          {/* <Card src={bakedSalmon} name='Baked Salmon with cherry tomatoes' />
           <Card src={bangersMash} name='Bangers and Mash' />
           <Card src={chessBurger} name='Cheese Burger' />
           <Card src={chichagoPizza} name='Chichago Pizza' />
@@ -71,7 +70,7 @@ export default function Home() {
           <Card src={reubenSandwich} name='Reuben Sandwich' />
           <Card src={steakKidney} name='Steak and Kidney Pie' />
           <Card src={sundayRoast} name='Sunday Roast' />
-          <Card src={toadHole} name='Toad in the Hole' />
+          <Card src={toadHole} name='Toad in the Hole' /> */}
         </div>
 
         <div className="flex justify-center mt-16">
