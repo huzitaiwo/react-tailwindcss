@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react"
-import { firebaseAuth } from "../firebase/config"
+import { firebaseAuth, firebaseFirestore } from "../firebase/config"
 import { useAuthContext } from "./useAuthContext"
 
 export const useLogin = () => {
   const [unMounted, setUnMounted] = useState(false)
-  const [isPending, setIsPending] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
 
   const login = async (email, password) => {
     setError(null)
-    setIsPending(true)
+    setIsLoading(true)
 
     try {
       const res = await firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -24,13 +24,13 @@ export const useLogin = () => {
 
       if (!unMounted) {
         setError(null)
-        setIsPending(false)
+        setIsLoading(false)
       }
     }
     catch (err) {
       if (!unMounted) {
         setError(err.message)
-        setIsPending(false)
+        setIsLoading(false)
       }
     }
   }
@@ -39,5 +39,5 @@ export const useLogin = () => {
     return () => setUnMounted(true)
   },[])
 
-  return { isPending, error, login }
+  return { isLoading, error, login }
 }

@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 export default function Navbar() {
-  const { user } = useAuthContext()
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -47,7 +46,7 @@ export default function Navbar() {
             )}
           </button>
         </div>
-        {user && <h4 className='text-xl text-bold mb-8'>&#128075; Hi! {user.displayName}</h4>}
+
         {(toggleMenu || screenWidth > 768) && (
           <ul onClick={() => setToggleMenu(false)} className='text-sm'>
             <li className='py-1'>

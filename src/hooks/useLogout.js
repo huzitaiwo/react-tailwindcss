@@ -1,45 +1,36 @@
-import { useState, useEffect } from 'react'
-import { firebaseAuth } from '../firebase/config'
+import { useState } from "react"
+import { firebaseAuth, firebaseFirestore } from "../firebase/config"
 import { useAuthContext } from './useAuthContext'
 
 export const useLogout = () => {
-  const { dispatch } = useAuthContext()
-  
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [isPending, setIsPending] = useState(false)
-  const [unMounted, setUnMounted] = useState(false)
+  const { dispatch, user } = useAuthContext()
 
   const logout = async () => {
     setError(null)
-    setIsPending(true)
+    setIsLoading(true)
 
     // sign user out
     try {
+      // update online status
+      const { uid } = user
+      await firebaseFirestore.collection('users').doc(uid).update({ online: false })
+
       await firebaseAuth.signOut()
 
-      //dispatch logout action
+      // dispatch logout action
       dispatch({ type: 'LOGOUT' })
 
-      // update states
-      if (!unMounted) {
-        setIsPending(false)
-        setError(null)
-      }
+      // update state
+      setIsLoading(false)
+      setError(null)
     }
-    
     catch(err) {
-      if (!unMounted) {
-        setIsPending(false)
-        setError(err.message)
-        console.log(err.message)
-      }
+      setError(err.message)
+      setIsLoading(false)
     }
   }
 
-  useEffect(() => {
-    return () => setUnMounted(true)
-  }, [])
-
-  return { logout, error, isPending }
-
+  return { isLoading, error, logout }
 }

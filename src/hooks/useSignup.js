@@ -1,56 +1,54 @@
-import { useState, useEffect } from 'react'
-import { firebaseAuth, firebaseStorage } from '../firebase/config'
+import { useState, useEffect } from "react"
+import { firebaseAuth, firebaseStorage } from "../firebase/config"
 import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
+  const [unMounted, setUnMounted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
 
-  const [error, setError] = useState(null)
-  const [isPending, setIsPending] = useState(false)
-  const [unMounted, setUnMounted] = useState(false)
-
-  const signup = async (email, password, displayName, thumbnail) => {
+  const singup = async (email, password, displayName, thumbnail) => {
     setError(null)
-    setIsPending(true)
+    setIsLoading(true)
 
     try {
-      // sign user up
+      // signup user
       const res = await firebaseAuth.createUserWithEmailAndPassword(email, password)
 
-      if (!res) {
-        throw new Error('Colud not complete signup')
+      if(!res) {
+        throw new Error('Could not complete signup')
       }
 
-      //upload user thumbnail
+      // upload user thumbnail
       const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
       const photo = await firebaseStorage.ref(uploadPath).put(thumbnail)
       const photoURL = await photo.ref.getDownloadURL()
 
-      // add displayName to user
+      // add displayName and photoURL to user
       await res.user.updateProfile({ displayName, photoURL })
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
-
-      //update states
+      
       if (!unMounted) {
-        setIsPending(false)
         setError(null)
+        setIsLoading(false)
       }
     }
 
-    catch (err) {
+    catch(err) {
       if (!unMounted) {
-        setIsPending(false)
-        console.log(err.message)
         setError(err.message)
+        setIsLoading(false)
       }
     }
+    
   }
 
   useEffect(() => {
     return () => setUnMounted(true)
-  }, [])
+  },[])
 
-  return { error, isPending, signup }
+  return { isLoading, error, singup }
 }
