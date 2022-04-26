@@ -29,14 +29,14 @@ export default function Meal() {
 
         <div className="mb-6">
           <h3 className='text-xl font-bold mb-3'>Ingredients</h3>
-          {meal.ingredients.map((ingredient, i) => (
+          {meal.ingredients && meal.ingredients.map((ingredient, i) => (
             <p className='pb-2' key={i}>{ingredient}</p>
           ))}
         </div>
 
         <div className="mb-6">
           <h3 className='text-xl font-bold mb-3'>Steps to make</h3>
-          {meal.method.map((mtd, i) => (
+          {meal.method && meal.method.map((mtd, i) => (
             <p className='pb-2 text-justify' key={i}>{mtd}</p>
           ))}
         </div>
