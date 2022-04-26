@@ -44,8 +44,8 @@ export default function Home() {
     <>
       <Header />
       <div>
-        <h2 className="text-gray-700 text-5xl font-semibold">Recipes</h2>
-        <h3 className="text-2xl font-semibold">For Ninjas</h3>
+        <h2 className="text-gray-700 text-4xl font-semibold">Meals</h2>
+        <h3 className="text-2xl font-semibold">Just For You</h3>
       </div>
       <div>
         <h4 className="font-bold mt-10 pb-2 border-b border-gray-200">Latest Meals</h4>
