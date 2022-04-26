@@ -8,7 +8,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
 
-  const singup = async (email, password, displayName, thumbnail) => {
+  const signup = async (email, password, displayName, thumbnail) => {
     setError(null)
     setIsPending(true)
 
@@ -50,5 +50,5 @@ export const useSignup = () => {
     return () => setUnMounted(true)
   },[])
 
-  return { isPending, error, singup }
+  return { isPending, error, signup }
 }
